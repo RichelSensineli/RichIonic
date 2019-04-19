@@ -1,7 +1,7 @@
+import { CredenciaisDTO } from './../models/credenciais.dto';
 import { StorageService } from './storage.service';
 import { LocalUser } from './../models/localUser';
 import { API_CONFIG } from './../config/api.config';
-import { CredenciaisDTO } from './../models/credenciaisDTO';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelper } from 'angular2-jwt'
