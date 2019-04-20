@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { ClienteService } from '../services/domain/cliente.service';
+import { CartService } from '../../src/services/domain/cart.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ClienteService } from '../services/domain/cliente.service';
     AuthService,
     StorageService,
     ClienteService,
-    ProdutoService
+    ProdutoService,
+    CartService
   ]
 })
 export class AppModule {}
