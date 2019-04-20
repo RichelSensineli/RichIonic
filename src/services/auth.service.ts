@@ -1,3 +1,4 @@
+import { CartService } from '../../src/services/domain/cart.service';
 import { CredenciaisDTO } from './../models/credenciais.dto';
 import { StorageService } from './storage.service';
 import { LocalUser } from './../models/localUser';
@@ -11,7 +12,10 @@ export class AuthService {
 
     jwtHelper: JwtHelper = new JwtHelper();
 
-    constructor(public http: HttpClient, public storage: StorageService) {
+    constructor(
+        public http: HttpClient, 
+        public storage: StorageService,
+        public cartService: CartService) {
 
     }
     authenticate(creds: CredenciaisDTO) {
@@ -28,8 +32,8 @@ export class AuthService {
             token : tok,
             email : this.jwtHelper.decodeToken(tok).sub
         };
-
         this.storage.setLocalUser(user);
+        this.cartService.createOrClearCart();
     }
 
     logout(){
