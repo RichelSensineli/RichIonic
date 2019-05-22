@@ -19,6 +19,5 @@ export class PedidoService {
                 responseType: 'text'
             }
         );
-
     }
 }
